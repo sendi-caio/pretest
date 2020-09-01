@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "express_from_scratch",
+    "password": "express_from_scratch",
+    "database": "express_from_scratch",
+    "host": "127.0.0.1",
+    "dialect": "mariadb"
+  },
+  "test": {
+    "username": "express_from_scratch",
+    "password": "express_from_scratch",
+    "database": "express_from_scratch",
+    "host": "127.0.0.1",
+    "dialect": "mariadb"
+  },
+  "production": {
+    "username": "express_from_scratch",
+    "password": "express_from_scratch",
+    "database": "express_from_scratch",
+    "host": "127.0.0.1",
+    "dialect": "mariadb"
+  }
+}
