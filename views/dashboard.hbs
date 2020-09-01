@@ -1,0 +1,13 @@
+        {{#contentFor "body"}}
+
+        <h1>
+            Welcome to Dashboard, 
+            {{#if req.session.username}} {{req.session.username}} {{/if}}
+        </h1>
+        <form action="/login" method="POST" enctype="multipart/form-data">
+        Photo: <input type="text" name="email">
+        <input type="submit" value="Upload">
+        </form>
+        <a href="/logout">Logout</a>
+        
+        {{/contentFor}}

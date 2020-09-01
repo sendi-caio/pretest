@@ -2,7 +2,7 @@ module.exports = {
   apps : [
     {
       name: "pretest",
-      script: 'index.js',
+      script: "node .",
       watch: true
     }
   ],

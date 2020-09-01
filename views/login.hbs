@@ -1,0 +1,11 @@
+        {{#contentFor "body"}}
+
+        <form action="/login" method="POST" class="form-signin">
+            <img class="mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+            <input type="email" name="email" class="form-control" placeholder="Email address" required> <br />
+            <input type="text" name="password" class="form-control" placeholder="Password" required> <br />
+            <input type="submit" value="Login" class="btn btn-lg btn-primary btn-block"> <br />
+            {{#if e}} {{e}} {{/if}}
+        </form>
+
+        {{/contentFor}}
