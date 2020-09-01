@@ -9,7 +9,9 @@ const post = async (req, res) => {
   const user = await db.User.findOne({ where: { email: req.body.email }})
 
   if(user && bcrypt.compareSync(req.body.password, user.dataValues.password)){
-    res.redirect('/dashboard')
+    req.session.name = user
+    req.session.save(() => res.redirect('/dashboard'))
+    
   }else {
     res.redirect('/login')
   }

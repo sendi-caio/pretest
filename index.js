@@ -7,11 +7,20 @@ const login = require('./routes/login')
 const hbs = require('express-hbs');
 const bodyParser = require('body-parser')
 
+const session = require('express-session')
+const sessionStore = require('express-session-sequelize')
+const SessionStore = sessionStore(session.Store);
+
+const db = require('./models')
+
+const sequelizeSessionStore = new SessionStore({
+  db: db.sequelize
+});
 
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
-  store: true,
+  store: sequelizeSessionStore,
   saveUninitialized: true,
   cookie: { secure: true }
 }))
@@ -27,6 +36,11 @@ app.set('views', __dirname + '/views');
 
 app.get('/login', login.get)
 app.post('/login', login.post)
+app.get('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.redirect('login')
+  })
+})
 
 app.get('/dashboard', (req, res) => {
   res.render('dashboard')
