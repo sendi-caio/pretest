@@ -20,13 +20,14 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', (req, res) => res.redirect('/login'))
 const login = require('./routes/login');
+const dashboard = require('./routes/dashboard');
 const checkLogIn = (req, res, next) => {
     const login = true
     if(login) next()
 }
 app.get('/login', login.get_login)
 app.post('/login', checkLogIn, login.post_login)
-app.get('/dashboard')
+app.get('/dashboard', checkLogIn, dashboard.get_dashboard)
 
 
 app.listen(port, () => console.log(`listen to ${port} `))
