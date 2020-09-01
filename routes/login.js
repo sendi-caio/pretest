@@ -7,33 +7,23 @@ const get_login = (req, res) => {
 
 const post_login = async (req, res) => {
     // res.send('OK')
-    const { name, password } = req.body
+    const { name, password, email } = req.body
     console.log(name)
     console.log(password)
     
 
     
-    const user = await db.User.findOne({
+    const mail = await db.User.findOne({
         where: {
-            name: name
+            email: email
         }
     })
-
-    // res.send(user)
-    console.log(user)
-    // console.log(user.name)
-    // console.log(user.password)
-
-    if(user && bcrypt.compare(password, user.password)) {
+    if(mail && bcrypt.compare(password, mail.password)) {
+        req.session.user = mail
         res.redirect('/dashboard')
+    } else {
+        res.redirect('/login')
     }
-
-    // if (user != user.name) {
-    //     res.redirect('/login')
-    // } else if (bcrypt.compare(password, user.password)) {
-    //     return true;
-    // }
-
 }
 
 module.exports = {
