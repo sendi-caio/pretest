@@ -26,5 +26,13 @@
     "pm2": "^4.4.1",
     "portfinder": "^1.0.28",
     "sequelize-cli": "^6.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sendi-caio/pretest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sendi-caio/pretest/issues"
+  },
+  "homepage": "https://github.com/sendi-caio/pretest#readme"
 }
