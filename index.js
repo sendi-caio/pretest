@@ -46,6 +46,7 @@ const dashboard = require('./routes/dashboard');
 const checkLogIn = (req, res, next) => {
     const login = req.session.user
     if(login) next()
+    else res.redirect('/login')
 }
 app.get('/login', login.get_login)
 app.post('/login', checkLogIn, login.post_login)
