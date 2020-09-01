@@ -1,0 +1,12 @@
+{{!< default}}
+{{#contentFor "title"}}
+Login Page
+{{/contentFor}}
+
+{{#contentFor "body"}}
+  <form action="/login" method="post">
+  username <input type="text" name="name">
+  password <input type="password" name="password">
+  <button type="submit">login</button>
+  </form>
+{{/contentFor}}
