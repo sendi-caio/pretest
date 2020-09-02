@@ -1,0 +1,26 @@
+{{#contentFor 'body'}}
+['create user']
+
+<form method="POST" enctype="multipart/form-data" action="/users/create">
+    <div>
+        name : <input name="name" type="text" />
+    </div>
+    <div>
+        password: <input name="password" type="text" />
+    </div>
+    <div>
+        email : <input name="email" type="email" />
+
+    </div>
+    <div>
+        avatar: <input name="avatar" type="file" />
+
+    </div>
+    <div>
+        birth_date: <input name="birth_date" type="date" />
+    </div>
+    <button type="submit">CREATE USER</button>
+
+</form>
+
+{{/contentFor}}

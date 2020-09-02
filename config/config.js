@@ -1,22 +1,22 @@
 const config = {
   development: {
-    username: "pretest",
-    password: "pretest",
-    database: "pretest",
+    username: "test12",
+    password: "Test12345!",
+    database: "test1",
     host: "127.0.0.1",
     dialect: "mysql"
   },
   test: {
-    username: "pretest",
-    password: "pretest",
-    database: "pretest",
+    username: "test12",
+    password: "Test12345!",
+    database: "test1",
     host: "127.0.0.1",
     dialect: "mysql"
   },
   production: {
-    username: "pretest",
-    password: "pretest",
-    database: "pretest",
+    username: "test12",
+    password: "Test12345!",
+    database: "test1",
     host: "127.0.0.1",
     dialect: "mysql"
   }
