@@ -3,7 +3,8 @@ module.exports = {
     {
       name: "pretest",
       script: "node .",
-      watch: true
+      watch: ["models", "index.js", "views"],
+      ignore_watch : ["uploads"],
     }
   ],
 };

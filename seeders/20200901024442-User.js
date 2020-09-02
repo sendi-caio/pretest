@@ -10,8 +10,8 @@ module.exports = {
       avatar: '',
       date_birth: '1996-04-11',
       email: 'disaada@gmail.com',
-      created_at: '2020-09-01',
-      updated_at: '2020-09-01',
+      created_at: Sequelize.fn('NOW'),
+      updated_at: Sequelize.fn('NOW'),
     }], {})
   },
 
