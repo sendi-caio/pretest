@@ -35,6 +35,15 @@ app.engine('hbs', hbs.express4({
     beautify: true
 }));
 
+// use express-fileupload
+const fileUpload = require('express-fileupload')
+app.use(fileUpload({
+    createParentPath: true
+}));
+
+const path = require('path')
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
+
 
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
@@ -49,10 +58,16 @@ const checkLogIn = (req, res, next) => {
     else res.redirect('/login')
 }
 app.get('/login', login.get_login)
-app.post('/login', checkLogIn, login.post_login)
+app.post('/login', login.post_login)
 app.get('/dashboard', checkLogIn, dashboard.get_dashboard)
 const logout = require('./routes/logout')
 app.get('/logout', logout)
+
+// create users
+const user = require('./routes/user')
+app.get('/user/create', user.get_user )
+app.post('/user/create', user.post_user)
+app.get('/user/:id', user.detail_user)
 
 
 app.listen(port, () => console.log(`listen to ${port} `))

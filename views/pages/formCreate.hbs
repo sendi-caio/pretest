@@ -1,0 +1,15 @@
+{{#contentFor "title"}}
+Form Create
+{{/contentFor}}
+{{#contentFor "body"}}
+<form action="/user/create" method="post" enctype="multipart/form-data">
+    <div>
+        username <input type="text" name="name"> <br>
+        password <input type="password" name="password"><br>
+        email <input type="email" name="email"><br>
+        birthdate <input type="date" name="birthdate"><br>
+        avatar <input type="file" name="avatar"><br>
+        <button type="submit">create user</button>
+    </div>
+</form>
+{{/contentFor}}
