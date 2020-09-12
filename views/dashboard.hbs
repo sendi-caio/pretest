@@ -1,0 +1,17 @@
+        {{#contentFor "body"}}
+
+        <form action="/user" method="POST" enctype="multipart/form-data" class="form-signin">
+            <h5>Welcome to Dashboard, {{data.user}}</h5>
+            <a href="/logout">Logout</a> |
+            <a href="/user/{{data.id}}">View Profile</a>
+            <br/></br>
+            <input type="text" name="username" placeholder="Name" required class="form-control"> <br/>
+            <input type="text" name="password" class="form-control" placeholder="Password" required class="form-control"> <br />
+            <input type="email" name="email" placeholder="Email" required class="form-control"> <br/>
+            <input type="date" name="date_birth" placeholder="Date Birth" required class="form-control"> <br/>
+            <input type="file" name="photo" class="form-control"> <br/>
+            <input type="submit" value="Save" class="btn btn-lg btn-primary btn-block">
+            {{#if e}} {{e}} {{/if}}
+        </form>
+        
+        {{/contentFor}}

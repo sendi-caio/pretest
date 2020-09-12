@@ -1,0 +1,15 @@
+{{#contentFor "body"}}
+
+<div class="form-signin">
+    <img src="/uploads/{{user.avatar}}" class="card-img-top" alt="...">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Username : {{user.username}}</li>
+        <li class="list-group-item">Email : {{user.email}}</li>
+        <li class="list-group-item">Date birth : {{user.date_birth}}</li>
+    </ul>
+    <div class="card-body">
+        <a href="/" class="card-link">Back</a>
+    </div>
+</div>        
+
+{{/contentFor}}

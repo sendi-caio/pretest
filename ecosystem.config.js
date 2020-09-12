@@ -2,8 +2,9 @@ module.exports = {
   apps : [
     {
       name: "pretest",
-      script: 'index.js',
-      watch: true
+      script: "node .",
+      watch: ["models", "index.js", "views"],
+      ignore_watch : ["uploads"],
     }
   ],
 };
